@@ -38,6 +38,7 @@ main_page_head = '''
 
         .info  {
             margin-top: 40px;
+            color: #003366;
         }
         
         #trailer .modal-dialog {
@@ -71,7 +72,7 @@ main_page_head = '''
             background-color: #FFCC00;
         }
         .movie-tile .movie-info h4 {
-            color: #003366
+            color: #003366;
         }
         .movie-tile .movie-info h4:hover {
             color: white;
@@ -143,7 +144,7 @@ main_page_content = '''
             <a class="navbar-brand" href="#">My Favourite Movies</a>
           </div>
           <div class="info">
-              <h3 class="text-center" id = "content" ></h3>
+              <h4 class="text-center" id = "content" ></h4>
          </div>         
         </div>
       </div>
