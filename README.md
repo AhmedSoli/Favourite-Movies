@@ -1,4 +1,4 @@
-### Project: Movie Trailer Website  - _Soli_
+### Movie Trailer Website  - _Soli_
 ------------------------
 This website stores a list of all my favorite movies, including their posters , trailers and some additional information.
 
