@@ -25,7 +25,11 @@ Python _v2.* or v3.*_
 
 #### Extra Credit Description
 ----
-When hovering over a movie tile, the storyline will be displayed in the navigation bar.
+Under the movie title your will find a small menu containing the following:
+* Storyline
+* Actors
+* Director
+When hovering over any of them, the requested information will appear in the navigation bar.
 #### License 
 ----
 Movies is a public personal project, dedicated using [_CC0 1.0_](https://creativecommons.org/publicdomain/zero/1.0/). Feel free to do whatever you want with it.
