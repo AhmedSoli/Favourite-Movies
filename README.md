@@ -26,9 +26,11 @@ Python _v2.* or v3.*_
 #### Extra Credit Description
 ----
 Under the movie title your will find a small menu containing the following:
+
 * Storyline
 * Actors
 * Director
+
 When hovering over any of them, the requested information will appear in the navigation bar.
 
 #### License 
