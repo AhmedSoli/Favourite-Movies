@@ -68,7 +68,7 @@ main_page_head = '''
         }
         
         .movie-tile .movie-info {
-             background-color: #FFCC00;
+            background-color: #FFCC00;
         }
         .movie-tile .movie-info h4 {
             color: #003366
