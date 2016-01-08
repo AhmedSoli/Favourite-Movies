@@ -8,7 +8,7 @@ main_page_head = '''
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>My Favourite Movies</title>
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
@@ -36,7 +36,7 @@ main_page_head = '''
             border-color: #E7E7E7;
         }
 
-        .movie_info  {
+        .info  {
             margin-top: 40px;
         }
         
@@ -58,12 +58,25 @@ main_page_head = '''
         .movie-tile {
             margin-bottom: 20px;
             padding-top: 20px;
+        }
+        .movie-tile h2 {
             color: darkolivegreen;
         }
         .movie-tile:hover {
             background-color: gainsboro;
             cursor: pointer;
         }
+        
+        .movie-tile .movie-info {
+             background-color: #FFCC00;
+        }
+        .movie-tile .movie-info h4 {
+            color: #003366
+        }
+        .movie-tile .movie-info h4:hover {
+            color: white;
+        }
+     
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -129,7 +142,7 @@ main_page_content = '''
           <div class="navbar-header">
             <a class="navbar-brand" href="#">My Favourite Movies</a>
           </div>
-          <div class="movie_info">
+          <div class="info">
               <h3 class="text-center" id = "content" ></h3>
          </div>         
         </div>
@@ -148,14 +161,14 @@ movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2 >{movie_title}</h2>
-    <div class="col-sm-4">
+    <div class="col-sm-4 movie-info">
         <h4 onmouseover="getElementById('content').innerHTML='{movie_storyline}'" onmouseout="getElementById('content').innerHTML=''"> Storyline </h4>
     </div>
-    <div class="col-sm-4">
-        <h4 onmouseover="getElementById('content').innerHTML='{movie_actors}'" onmouseout="getElementById('content').innerHTML=''"> Actors </h4>
+    <div class="col-sm-4 movie-info">
+        <h4  onmouseover="getElementById('content').innerHTML='{movie_actors}'" onmouseout="getElementById('content').innerHTML=''"> Actors </h4>
     </div>
-    <div class="col-sm-4">
-        <h4 onmouseover="getElementById('content').innerHTML='{movie_director}'" onmouseout="getElementById('content').innerHTML=''"> Director </h4>
+    <div class="col-sm-4 movie-info">
+        <h4  onmouseover="getElementById('content').innerHTML='{movie_director}'" onmouseout="getElementById('content').innerHTML=''"> Director </h4>
     </div>
 </div>
 '''
