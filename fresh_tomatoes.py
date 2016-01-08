@@ -2,7 +2,6 @@ import webbrowser
 import os
 import re
 
-
 # Styles and scripting for the page
 main_page_head = '''
 <!DOCTYPE html>
@@ -131,7 +130,7 @@ main_page_content = '''
             <a class="navbar-brand" href="#">My Favourite Movies</a>
           </div>
           <div class="movie_info">
-              <h3 class="text-center" id = "plot" ></h3>
+              <h3 class="text-center" id = "content" ></h3>
          </div>         
         </div>
       </div>
@@ -146,9 +145,18 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" onmouseover="getElementById('plot').innerHTML='{movie_storyline}'">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2 >{movie_title}</h2>
+    <div class="col-sm-4">
+        <h4 onmouseover="getElementById('content').innerHTML='{movie_storyline}'" onmouseout="getElementById('content').innerHTML=''"> Storyline </h4>
+    </div>
+    <div class="col-sm-4">
+        <h4 onmouseover="getElementById('content').innerHTML='{movie_actors}'" onmouseout="getElementById('content').innerHTML=''"> Actors </h4>
+    </div>
+    <div class="col-sm-4">
+        <h4 onmouseover="getElementById('content').innerHTML='{movie_director}'" onmouseout="getElementById('content').innerHTML=''"> Director </h4>
+    </div>
 </div>
 '''
 
@@ -174,6 +182,8 @@ def create_movie_tiles_content(movies):
             movie_storyline=movie.storyline,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id,
+            movie_director = movie.director,
+            movie_actors = movie.actors,
             
         )
 
