@@ -30,6 +30,7 @@ Under the movie title your will find a small menu containing the following:
 * Actors
 * Director
 When hovering over any of them, the requested information will appear in the navigation bar.
+
 #### License 
 ----
 Movies is a public personal project, dedicated using [_CC0 1.0_](https://creativecommons.org/publicdomain/zero/1.0/). Feel free to do whatever you want with it.
