@@ -18,7 +18,29 @@ main_page_head = '''
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            background-color: white;
         }
+        
+        /* Navbar */
+        
+        .navbar-default .navbar-brand {
+            color: darkolivegreen;
+        }
+        
+        navbar {
+            border-radius: 0 !important;
+            -moz-border-radius: 0 !important;
+        }
+        
+        .navbar-default {
+            background-color: Grey;
+            border-color: #E7E7E7;
+        }
+
+        .movie_info  {
+            margin-top: 40px;
+        }
+        
         #trailer .modal-dialog {
             margin-top: 200px;
             width: 640px;
@@ -37,9 +59,10 @@ main_page_head = '''
         .movie-tile {
             margin-bottom: 20px;
             padding-top: 20px;
+            color: darkolivegreen;
         }
         .movie-tile:hover {
-            background-color: #EEE;
+            background-color: gainsboro;
             cursor: pointer;
         }
         .scale-media {
@@ -102,11 +125,14 @@ main_page_content = '''
     </div>
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">My Favourite Movies</a>
           </div>
+          <div class="movie_info">
+              <h3 class="text-center" id = "plot" ></h3>
+         </div>         
         </div>
       </div>
     </div>
@@ -120,15 +146,16 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" onmouseover="getElementById('plot').innerHTML='{movie_storyline}'">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+    <h2 >{movie_title}</h2>
 </div>
 '''
 
 
 def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
+    counter = 0
     content = ''
     for movie in movies:
         # Extract the youtube ID from the url
@@ -138,13 +165,18 @@ def create_movie_tiles_content(movies):
             r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
         trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
                               else None)
+        
+        # Get 
 
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            movie_storyline=movie.storyline,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            
         )
+
     return content
 
 
