@@ -21,7 +21,7 @@ law_abiding_citizen = media.Movie("Law Abiding Citizen", "A frustrated man"
                                   "https://upload.wikimedia.org/wikipedia/en/9/95/Law_abiding_citizen_ver5.jpg",  # N0QA
                                   "https://www.youtube.com/watch?v=p6hT_uY-jSM")
 inside_man = media.Movie("Inside Man", "A police detective, a bank robber, and a"
-                         "high-power broker enter high-stakes negotiations.",
+                         " high-power broker enter high-stakes negotiations.",
                          "Ruseel Gewirtz", "Denzel Washingtion, Clive Owen",
                          "https://upload.wikimedia.org/wikipedia/en/a/a2/Inside_Man_%28film_poster%29.jpg",  # N0QA
                          "https://www.youtube.com/watch?v=44v8NhVEL5A")
